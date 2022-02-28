@@ -40,4 +40,10 @@ Output 1:
 Output 2:
 99 
 
+Solution:
 
+public class Solution {
+    public int solve(ArrayList<Integer> A) {
+         
+    }
+}
