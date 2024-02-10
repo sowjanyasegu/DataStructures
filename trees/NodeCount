@@ -1,0 +1,56 @@
+Solution1:
+
+/**
+ * Definition for binary tree
+ * class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) {
+ *      val = x;
+ *      left=null;
+ *      right=null;
+ *     }
+ * }
+ */
+public class Solution {
+    private int count=0;
+    public int solve(TreeNode A) {
+        count=0;
+        nodeCount(A);
+        return count;
+    }
+
+    private void nodeCount(TreeNode currNode){
+        if(currNode == null) return;
+        count++;
+        nodeCount(currNode.left);
+        nodeCount(currNode.right); 
+    }
+}
+
+Solution2:
+/**
+ * Definition for binary tree
+ * class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) {
+ *      val = x;
+ *      left=null;
+ *      right=null;
+ *     }
+ * }
+ */
+public class Solution {
+    
+    public int solve(TreeNode A) {
+        return nodeCount(A);
+    }
+
+    private int nodeCount(TreeNode currNode){
+        if(currNode == null) return 0;
+        return 1+ nodeCount(currNode.left) +  nodeCount(currNode.right);
+    }
+}
