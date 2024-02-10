@@ -1,0 +1,28 @@
+Solution1:
+/**
+ * Definition for binary tree
+ * class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) {
+ *      val = x;
+ *      left=null;
+ *      right=null;
+ *     }
+ * }
+ */
+public class Solution {
+    private ArrayList<Integer> result;
+    public ArrayList<Integer> postorderTraversal(TreeNode A) {
+        result = new ArrayList<>();
+        pot(A);
+        return result;
+    }
+    private void pot(TreeNode root){
+        if (root==null) return;
+        pot(root.left);
+        pot(root.right);
+        result.add(root.val);
+    }
+}
